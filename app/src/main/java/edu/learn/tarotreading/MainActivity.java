@@ -22,33 +22,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        gridView = findViewById(R.id.optionGrid);
-        String options[] ={"General Reading", "Career", "Education", "Health","Relationship", "Yes/No Quest"};
+            // associate gridview here from layout
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.grid_item, R.id.text, options);
+        // gridOptions are
 
-        gridView.setAdapter(adapter);
+        /*
+         * 0: General Reading
+         * 1: Career
+         * 2: Education
+         * 3: Health
+         * 4: Relationship
+         * 5: Yes/No Quest
+         */
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        int value = 0;
-                if(position==0){
-                    value =7;
-                }
 
-                else if(position==5){
-                    value =3;
-                }
+     // while setting adapter use R.layout.grid_item and for text use R.id.text
 
-                else {
-                    value =5;
-                }
-                Intent intent = new Intent(MainActivity.this, ResultActivity.class);
-                intent.putExtra("value", value);
-                startActivity(intent);
-            }
-        });
+
+
+        // set GridView item onClick listener
+
+
 
     }
 }
